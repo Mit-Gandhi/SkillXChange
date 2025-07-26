@@ -37,21 +37,7 @@ SkillXChange is a web-based platform that empowers users to exchange skills and 
 ### Clone the Repository
 
 ```
-git clone https://github.com/Mit-Gandhi/Hack_with_gujarat.git
-```
-
-### Backend Setup
-
-#### Install required dependencies:
-
-```
-pip install -r backend/requirements.txt
-```
-
-#### Run the FastAPI server:
-```
-cd backend
-uvicorn api:app --reload
+git clone https://github.com/Mit-Gandhi/SkillXChange.git
 ```
 
 ### Frontend Setup:
@@ -65,46 +51,28 @@ npm run dev
 
 ### User Authentication 
 
-```/register``` – New users can create an account and log in.
+• New users redirected to /profile-setup to fill in name, skills, and interests.
+• Returning users redirected to /home after verifying UID and profile existence.
+• Admin users recognized using a pre-defined UID list.
 
-```/login``` – Existing users authenticate to access the system.
+### Navbar Logic
 
-### Home Page
+• Before Login: Shows platform logo + name (left), Login & Signup (right)
+• After Login:
+   • Left: Logo + "SkillXChange"
+   • Center: Requests, Messages, Chats
+   • Right: User profile image + name, Sign Out button
 
-```/home``` – The dashboard provides access to all major functionalities, including CCTV analysis, live monitoring, and sketch-to-image conversion.
+### Skill Exchange
 
-### CCTV Footage Analysis
+• Users can browse skills, send requests, and manage accepted exchanges.
+• Real-time chat enables seamless conversation between matched users.
 
-```/analyze``` – Users upload CCTV footage to detect and identify suspects.
-1. The system extracts frames and detects faces using InsightFace.
-2. Feature vectors are extracted using InsightFace (IR-SE50).
-3. The system compares detected faces against stored records using FAISS.
-4. If a match is found, it returns timestamps of all occurrences and generates trimmed video clips showing only the suspect.
-   
-```/analyze/report``` – Users can preview and download a detailed report with suspect information, timestamps, and video evidence.
+### Chat & Messaging
 
-### Live Surveillance Monitoring
+• Each skill match includes a dedicated chat room.
+• Firebase Firestore stores messages with timestamps for persistence.
 
-```/live``` – The system connects to live surveillance feeds to detect suspects in real-time.
-1. Faces are identified continuously and compared with database records.
-2. If a suspect is detected, their name, location, and match confidence are displayed.
-3. Alerts are triggered via Firebase Cloud Messaging (FCM) for immediate action.
-
-### Sketch-to-Image Generation
-
-```/sketch``` – Converts a monotone sketch into a realistic colorized image using a GAN-based model.
-1. This feature enhances low-quality evidence and improves face recognition performance.
-
-### Database Storage & Management
-
-```/records``` – Stores and manages police records for suspect identification.
-1. The system maintains a structured database of face feature vectors, names, and locations in Firebase Firestore.
-2. This allows cross-referencing and information sharing between different law enforcement agencies.
-
-## End-to-End Workflow Summary
-
-1. Register/Login → Access dashboard.
-2. Upload CCTV footage or connect live feed → Face detection & recognition.
-3. Retrieve timestamps & suspect clips → Download reports for further investigation.
-4. Convert sketches to images → Enhance face recognition from incomplete evidence.
-5. Manage stored records → Maintain an updated police database for future references.
+### Admin Access
+• Admins can view all users, status of requests, and reported profiles.
+• Admin UID check is implemented during login to enable access.
