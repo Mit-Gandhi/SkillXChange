@@ -30,7 +30,7 @@ SkillXChange is a web-based platform that empowers users to exchange skills and 
 
 ### Backend
 
-1.Firebase Firestore – NoSQL database for storing user profiles, skills, and messages
+1. Firebase Firestore – NoSQL database for storing user profiles, skills, and messages
 
 ## Installation & Setup
 
