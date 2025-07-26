@@ -52,27 +52,36 @@ npm run dev
 ### User Authentication 
 
 • New users redirected to /profile-setup to fill in name, skills, and interests.
+
 • Returning users redirected to /home after verifying UID and profile existence.
+
 • Admin users recognized using a pre-defined UID list.
 
 ### Navbar Logic
 
 • Before Login: Shows platform logo + name (left), Login & Signup (right)
+
 • After Login:
+
    • Left: Logo + "SkillXChange"
+   
    • Center: Requests, Messages, Chats
+   
    • Right: User profile image + name, Sign Out button
 
 ### Skill Exchange
 
 • Users can browse skills, send requests, and manage accepted exchanges.
+
 • Real-time chat enables seamless conversation between matched users.
 
 ### Chat & Messaging
 
 • Each skill match includes a dedicated chat room.
+
 • Firebase Firestore stores messages with timestamps for persistence.
 
 ### Admin Access
 • Admins can view all users, status of requests, and reported profiles.
+
 • Admin UID check is implemented during login to enable access.
