@@ -63,11 +63,9 @@ npm run dev
 
 • After Login:
 
-   • Left: Logo + "SkillXChange"
-   
-   • Center: Requests, Messages, Chats
-   
-   • Right: User profile image + name, Sign Out button
+  - Left: Logo + "SkillXChange"
+  - Center: Requests, Messages, Chats
+  - Right: User profile image + name, Sign Out button
 
 ### Skill Exchange
 
