@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/Firebase-%23FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
 </p>
 <p align="center">
-  <a href="https://skillxchanged.netlify.app/" target="_blank">
+  <a href="https://skillxchanged.netlify.app/">
     <strong>🔗Live Demo</strong>
   </a>
 </p>
